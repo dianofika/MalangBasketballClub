@@ -157,10 +157,13 @@
 
         <Button
             android:id="@+id/buttonOK"
+            style="@style/Base.TextAppearance.AppCompat.Title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:text="DAFTAR" />
+            android:background="@drawable/bgbtn"
+            android:text="DAFTAR"
+            android:textColor="@android:color/white" />
 
         <TextView
             android:id="@+id/tvHasil"
