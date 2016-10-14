@@ -121,28 +121,28 @@
             android:id="@+id/textView6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Kategori" />
+            android:text="Prestasi" />
 
         <CheckBox
-            android:id="@+id/checkBox"
+            android:id="@+id/cb1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checked="false"
-            android:text="Kelompok A1 (8-12 th)" />
+            android:text="POPDA" />
 
         <CheckBox
-            android:id="@+id/checkBox2"
+            android:id="@+id/cb2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checked="false"
-            android:text="Kelompok A2 (13-15 th)" />
+            android:text="LKS" />
 
         <CheckBox
-            android:id="@+id/checkBox3"
+            android:id="@+id/cb3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checked="false"
-            android:text="Kelompok A3 (16-21 th)" />
+            android:text="KOBALAJAR" />
 
         <TextView
             android:id="@+id/textView7"

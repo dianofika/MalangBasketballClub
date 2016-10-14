@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.TextView;
@@ -16,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
     EditText etAlamat;
     TextView tvHasil;
     RadioButton rbP, rbL;
+    CheckBox cb1, cb2, cb3;
 
     Button bOK;
 
@@ -32,6 +34,9 @@ public class MainActivity extends AppCompatActivity {
         tvHasil = (TextView) findViewById(R.id.tvHasil);
         rbP = (RadioButton) findViewById(R.id.rbPerempuan);
         rbL = (RadioButton) findViewById(R.id.rbLaki);
+        cb1 = (CheckBox) findViewById(R.id.cb1);
+        cb2 = (CheckBox) findViewById(R.id.cb2);
+        cb3 = (CheckBox) findViewById(R.id.cb3);
 
 
         bOK.setOnClickListener(new View.OnClickListener() {
@@ -40,9 +45,21 @@ public class MainActivity extends AppCompatActivity {
 
                 doProses();
                 doClick();
+                doGo();
 
             }
         });
+    }
+
+    private void doGo() {
+        String hasil = "Prestasi yang telah diraih ";
+        int startlen = hasil.length();
+        if (cb1.isChecked()) hasil += cb1.getText() + "\n";
+        if (cb2.isChecked()) hasil += cb2.getText() + "\n";
+        if (cb3.isChecked()) hasil += cb3.getText() + "\n";
+
+        if (hasil.length() == startlen) hasil += "Tidak ada pada Pilihan";
+        tvHasil.setText(hasil);
     }
 
     private void doClick() {
