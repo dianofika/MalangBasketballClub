@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -14,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
     EditText etNomor;
     EditText etAlamat;
     TextView tvHasil;
+    RadioButton rbP, rbL;
 
     Button bOK;
 
@@ -28,16 +30,38 @@ public class MainActivity extends AppCompatActivity {
         etAlamat = (EditText) findViewById(R.id.etAlamat);
         bOK = (Button) findViewById(R.id.buttonOK);
         tvHasil = (TextView) findViewById(R.id.tvHasil);
+        rbP = (RadioButton) findViewById(R.id.rbPerempuan);
+        rbL = (RadioButton) findViewById(R.id.rbLaki);
+
 
         bOK.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 doProses();
+                doClick();
 
             }
         });
     }
+
+    private void doClick() {
+
+        String hasil = null;
+
+        if (rbP.isChecked()) {
+            hasil = rbP.getText().toString();
+        } else if (rbL.isChecked()) {
+            hasil = rbL.getText().toString();
+        }
+
+        if (hasil == null) {
+            tvHasil.setText("Belum Memilih Status");
+        } else {
+            tvHasil.setText("\n Jenis Kelamin  : " + hasil);
+        }
+    }
+
 
     private void doProses() {
 
