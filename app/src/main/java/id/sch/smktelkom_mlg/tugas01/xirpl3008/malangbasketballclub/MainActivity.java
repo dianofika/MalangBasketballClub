@@ -7,6 +7,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -18,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     TextView tvHasil;
     RadioButton rbP, rbL;
     CheckBox cb1, cb2, cb3;
+    Spinner spinner;
 
     Button bOK;
 
@@ -37,7 +39,11 @@ public class MainActivity extends AppCompatActivity {
         cb1 = (CheckBox) findViewById(R.id.cb1);
         cb2 = (CheckBox) findViewById(R.id.cb2);
         cb3 = (CheckBox) findViewById(R.id.cb3);
+        spinner = (Spinner) findViewById(R.id.spinner);
 
+
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
 
         bOK.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,9 +52,14 @@ public class MainActivity extends AppCompatActivity {
                 doProses();
                 doClick();
                 doGo();
+                doSpin();
 
             }
         });
+    }
+
+    private void doSpin() {
+        tvHasil.setText("\n Posisi Anda adalah " + spinner.getSelectedItem().toString());
     }
 
     private void doGo() {
@@ -87,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
             String sekolah = etSekolah.getText().toString();
             int nomor = Integer.parseInt(etNomor.getText().toString());
             String alamat = etAlamat.getText().toString();
-            tvHasil.setText("Nama   : " + nama + "\n Sekolah    : " + sekolah + "\n No.Telp     : " + nomor + "\n Alamat    : " + alamat);
+            tvHasil.setText("\n Nama   : " + nama + "\n Sekolah    : " + sekolah + "\n No.Telp     : " + nomor + "\n Alamat    : " + alamat);
         }
     }
 

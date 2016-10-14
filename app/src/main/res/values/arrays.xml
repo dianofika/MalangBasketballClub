@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="pos">
+        <item> Center </item>
+        <item> Power Forward </item>
+        <item> Small Forward </item>
+        <item> Shooting Guard </item>
+        <item> Point Guard </item>
+    </string-array>
+</resources>
